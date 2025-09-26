@@ -1,0 +1,462 @@
+/* AMÉLIORATIONS RESPONSIVE */
+
+/* Base mobile-first */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Amélioration du header mobile */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.5rem 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        align-items: center;
+    }
+    
+    .logo {
+        height: 30px; /* Plus petit pour gagner de l'espace */
+        order: 1;
+    }
+    
+    .language-selector {
+        order: 2;
+        padding: 0.2rem;
+        margin: 0.3rem 0;
+    }
+    
+    .lang-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .main-nav {
+        order: 3;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem;
+        margin-top: 0.5rem;
+        padding: 0;
+        width: 100%;
+        background: rgba(253, 236, 229, 0.98);
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+    
+    .main-nav li {
+        flex: 0 1 auto;
+    }
+    
+    .main-nav a {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.5rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Hero mobile SIMPLIFIÉ sans boutons */
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        min-height: 500px;
+        padding-top: 180px; /* Espace pour le header fixe */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .hero h1 img {
+        height: 80px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Ajustements pour petits écrans */
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 120px;
+    }
+    
+    .hero h1 img {
+        height: 70px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+    .hero h1 img {
+        height: 60px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mode paysage mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        padding-top: 100px;
+        min-height: 100vh;
+    }
+    
+    .hero h1 img {
+        height: 60px;
+    }
+}
+
+/* Sections mobile */
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .section.groupe {
+        padding-top: 2rem; /* Moins d'espace pour éviter le gap */
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Groupe section mobile */
+@media (max-width: 768px) {
+    .groupe-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .groupe-text h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .groupe-text p {
+        font-size: 1rem;
+    }
+    
+    .membres-list {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .groupe-image {
+        order: -1; /* Image en premier sur mobile */
+    }
+}
+
+/* Albums mobile */
+@media (max-width: 768px) {
+    .albums-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .album-card {
+        padding: 1.5rem;
+    }
+    
+    .album-cover {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .album-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .album-description {
+        font-size: 0.95rem;
+    }
+    
+    .credits {
+        font-size: 0.85rem;
+    }
+}
+
+/* Vidéos mobile */
+@media (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .video-card {
+        padding: 1rem;
+    }
+    
+    .video-embed {
+        height: 180px;
+    }
+}
+
+/* Agenda mobile */
+@media (max-width: 768px) {
+    .agenda-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .agenda-table table {
+        min-width: 400px;
+        font-size: 0.9rem;
+    }
+    
+    .agenda-table th,
+    .agenda-table td {
+        padding: 10px;
+    }
+    
+    .date-col {
+        width: 120px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Booking mobile */
+@media (max-width: 768px) {
+    .booking-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .booking-info {
+        padding: 1.5rem;
+    }
+    
+    .booking-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .contact-item h4 {
+        font-size: 0.95rem;
+    }
+    
+    .contact-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablettes */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .albums-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+    
+    .main-nav {
+        gap: 1rem;
+    }
+    
+    .main-nav a {
+        font-size: 0.85rem;
+    }
+}
+
+/* Petits écrans (smartphones en mode portrait) */
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 140px; /* Un peu moins pour petits écrans */
+    }
+    
+    .hero h1 img {
+        height: 70px; /* Taille intermédiaire */
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .main-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .main-nav a {
+        padding: 0.3rem 0.4rem;
+        font-size: 0.65rem;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .hero h1 img {
+        height: 60px;
+    }
+    
+    .cta-btn {
+        font-size: 0.8rem;
+        padding: 0.7rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Amélioration de la lisibilité sur mobile */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Empêche le zoom automatique sur iOS */
+    }
+    
+    input, textarea, select {
+        font-size: 16px; /* Empêche le zoom sur focus */
+    }
+    
+    /* Meilleur espacement tactile */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Scroll horizontal pour les tableaux */
+    .agenda-table {
+        position: relative;
+        margin: 0 -1rem;
+        padding: 0 1rem;
+    }
+    
+    .agenda-table::after {
+        content: '→';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(206, 119, 23, 0.9);
+        color: white;
+        padding: 0.5rem;
+        border-radius: 5px 0 0 5px;
+        pointer-events: none;
+        opacity: 0.7;
+    }
+}
+
+/* Mode paysage mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        padding-top: 100px; /* Moins en paysage */
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        margin-top: 0;
+    }
+    
+    .hero h1 img {
+        height: 60px;
+    }
+    
+    .cta-buttons {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Amélioration des animations sur mobile */
+@media (max-width: 768px) {
+    /* Désactiver les animations complexes sur mobile pour améliorer les performances */
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    
+    .hero-content,
+    .hero h1,
+    .hero-subtitle,
+    .hero-description,
+    .cta-buttons {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Z-index pour éviter les chevauchements */
+.hero {
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    z-index: 1000;
+}

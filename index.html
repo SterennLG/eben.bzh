@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBEN - Musique Bretonne Contemporaine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #3C1910;
+            background-color: #FDECE5;
+            overflow-x: hidden;
+            padding-top: 0;
+        }
+
+
+        /* HEADER FIXE AVEC NAVIGATION MULTILINGUE */
+        .header {
+            background: rgba(253, 236, 229, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(60, 25, 16, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            height: 45px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .main-nav {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #3C1910;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .main-nav a:hover {
+            color: #CE7717;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #CE7717;
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* SÉLECTEUR DE LANGUE */
+        .language-selector {
+            display: flex;
+            gap: 0.3rem;
+            background: #CE7717;
+            border-radius: 20px;
+            padding: 0.3rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: #CE7717;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lang-btn.active:hover {
+            background: white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+        margin-top: 0;
+    height: 100vh; /* Retour à la hauteur complète */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://static.wixstatic.com/media/545133_1b02fffe138e401fa79add9202f65733~mv2.jpg/v1/crop/x_333,y_0,w_7327,h_5331/fill/w_1920,h_1080,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBEN_CC_0057.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            animation: fadeInUp 1s ease 0.2s both;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 img {
+            height: 120px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        /* SECTIONS GÉNÉRALES */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #CE7717;
+            position: relative;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #CE7717;
+        }
+
+        /* SECTION GROUPE */
+        .groupe {
+            background: #FDECE5;
+        }
+
+        .groupe-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .groupe-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #3C1910;
+            font-weight: 700;
+        }
+
+        .groupe-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #7B3012;
+        }
+
+        .membres-list {
+            background: rgba(253, 236, 229, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border-left: 4px solid #CE7717;
+        }
+
+        .membres-list h4 {
+            color: #CE7717;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .membres-list ul {
+            list-style: none;
+        }
+
+        .membres-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(206, 119, 23, 0.2);
+            color: #3C1910;
+        }
+
+        .groupe-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+ /* SECTION GROUPE */
+        .groupe {
+            background: #FDECE5;
+        }
+
+        .groupe-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .groupe-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #3C1910;
+            font-weight: 700;
+        }
+
+        .groupe-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #7B3012;
+        }
+
+        .membres-list {
+            background: rgba(253, 236, 229, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border-left: 4px solid #CE7717;
+        }
+
+        .membres-list h4 {
+            color: #CE7717;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .membres-list ul {
+            list-style: none;
+        }
+
+        .membres-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(206, 119, 23, 0.2);
+            color: #3C1910;
+        }
+
+        .groupe-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+
+      
+        /* SECTION MUSIQUE/ALBUMS */
+        .musique {
+            background: #FDECE5;
+        }
+
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .album-card {
+            background: #FDECE5;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(60, 25, 16, 0.15);
+            transition: transform 0.3s ease;
+            border: 2px solid rgba(206, 119, 23, 0.2);
+        }
+
+        .album-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(60, 25, 16, 0.2);
+        }
+
+        .album-cover {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .album-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .album-card h3 {
+            color: #CE7717;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            font-size: 1.5rem;
+        }
+
+        .album-description {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .album-description p {
+            margin-bottom: 1rem;
+        }
+
+        .credits {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .credits p {
+            margin-bottom: 0.3rem;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #7B3012;
+        }
+
+        .streaming-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        .streaming-btn {
+            background: #CE7717;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .streaming-btn:hover {
+            background: #7B3012;
+            transform: translateY(-2px);
+        }
+
+      /* AGENDA - STYLE TABLEAU SIMPLE */
+        .agenda-table {
+            width: 100%;
+            background: #FDECE5;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .agenda-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .agenda-table th {
+            background: #CE7717;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .agenda-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .agenda-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .date-col {
+            font-weight: bold;
+            color: #CE7717;
+            width: 150px;
+        }
+
+        /* SECTION VIDEOS */
+        .videos {
+            background: #EACFA5;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .video-card {
+            background: #FDECE5;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(60, 25, 16, 0.15);
+            transition: transform 0.3s ease;
+            border: 2px solid rgba(206, 119, 23, 0.2);
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(60, 25, 16, 0.2);
+        }
+
+        .video-embed {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .video-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-title {
+            color: #CE7717;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-description {
+            color: #7B3012;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .concerts-filter {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 2px solid #CE7717;
+            color: #CE7717;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #CE7717;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(206, 119, 23, 0.3);
+        }
+
+        .concerts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .concert-card {
+            background: #EACFA5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #CE7717;
+            transition: all 0.3s ease;
+        }
+
+        .concert-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(60, 25, 16, 0.15);
+            background: rgba(234, 207, 165, 0.8);
+        }
+
+        .concert-date {
+            font-weight: 800;
+            color: #CE7717;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .concert-lieu {
+            font-size: 1rem;
+            color: #3C1910;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .concert-type {
+            font-size: 0.9rem;
+            color: #7B3012;
+            font-style: italic;
+        }
+
+        /* SECTION BOOKING */
+        .booking {
+            background: #FDECE5;
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .booking-info {
+            background: #FDECE5;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(60, 25, 16, 0.15);
+            border: 2px solid rgba(206, 119, 23, 0.2);
+        }
+
+        .booking-info h3 {
+            color: #CE7717;
+            margin-bottom: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(206, 119, 23, 0.2);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .contact-item h4 {
+            color: #CE7717;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-item p {
+            color: #3C1910;
+            margin-bottom: 0.3rem;
+        }
+
+        /* STYLES MULTILINGUE */
+        .content {
+            display: none;
+        }
+        
+        .content.active {
+            display: block;
+        }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px; /* Réduit car header plus compact */
+    }
+    
+    .header {
+        padding: 0.3rem 0;
+    }
+    
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.3rem;
+    }
+    
+    /* AJOUTEZ CES LIGNES POUR HEADER-TOP MOBILE */
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+    
+    .logo {
+        height: 25px; /* Plus petit */
+    }
+    
+    .language-selector {
+        padding: 0.15rem;
+        gap: 0.2rem;
+    }
+    
+    .lang-btn {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.65rem;
+    }
+    
+    /* Navigation compacte */
+    .main-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.2rem;
+        width: 100%;
+        padding: 0.3rem;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    
+    .main-nav a {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.3rem;
+        letter-spacing: 0.3px;
+    }
+    
+    /* Hero ajusté */
+    .hero {
+        height: calc(100vh - 100px);
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* Sections */
+    .groupe-grid,
+    .booking-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .albums-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* AJOUTEZ CE NOUVEAU BLOC APRÈS LA SECTION MOBILE */
+@media (min-width: 769px) {
+    .header-top {
+        display: contents; /* Ignore le conteneur sur desktop */
+    }
+}
+
+
+        /* ANIMATIONS AU SCROLL */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER AVEC NAVIGATION -->
+<header class="header">
+    <nav class="nav-container">
+        <!-- NOUVEAU : Conteneur pour logo + langue -->
+        <div class="header-top">
+            <a href="#accueil" class="logo">
+                <img src="https://i.imgur.com/L2CRvZF.png" alt="EBEN Logo">
+            </a>
+            
+            <!-- SÉLECTEUR DE LANGUE déplacé ici -->
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('br')">BR</button>
+            </div>
+        </div>
+        
+        <!-- NAVIGATION reste ici -->
+        <ul class="main-nav">
+            <li><a href="#accueil" class="nav-link" data-fr="ACCUEIL" data-en="HOME" data-br="DEGEMER">ACCUEIL</a></li>
+            <li><a href="#groupe" class="nav-link" data-fr="LE GROUPE" data-en="THE BAND" data-br="AR STROLLAD">LE GROUPE</a></li>
+            <li><a href="#musique" class="nav-link" data-fr="MUSIQUE" data-en="MUSIC" data-br="SONEREZH">MUSIQUE</a></li>
+            <li><a href="#videos" class="nav-link" data-fr="VIDÉOS" data-en="VIDEOS" data-br="VIDEOIOÙ">VIDÉOS</a></li>
+            <li><a href="#agenda" class="nav-link" data-fr="AGENDA" data-en="TOUR DATES" data-br="DEIZIATAER">AGENDA</a></li>
+            <li><a href="#booking" class="nav-link" data-fr="BOOKING" data-en="BOOKING" data-br="DAREMPREDOÙ">BOOKING</a></li>
+        </ul>
+    </nav>
+</header>
+
+   <!-- HERO SECTION -->
+<section class="hero" id="accueil">
+    <div class="hero-content">
+        <!-- CONTENU FRANÇAIS -->
+        <div class="content active" id="content-fr">
+            <h1><img src="https://i.imgur.com/KqWW6f8.png" alt="EBEN Logo"></h1>
+            <p class="hero-subtitle">Musique Bretonne Actuelle</p>
+            <p class="hero-description">
+                Des voix et des cordes, un kan-ha-diskan qui chante les histoires de notre temps. 
+                Six artistes explorent l'émancipation à travers la tradition bretonne revisitée.
+            </p>
+        </div>
+
+        <!-- CONTENU ANGLAIS -->
+        <div class="content" id="content-en">
+            <h1><img src="https://i.imgur.com/KqWW6f8.png" alt="EBEN Logo"></h1>
+            <p class="hero-subtitle">Today's Breton Traditional Music</p>
+            <p class="hero-description">
+                Voices and strings, a kan-ha-diskan that sings the stories of our time. 
+                Six artists explore emancipation through revisited Breton tradition.
+            </p>
+        </div>
+
+        <!-- CONTENU BRETON -->
+        <div class="content" id="content-br">
+            <h1><img src="https://i.imgur.com/KqWW6f8.png" alt="EBEN Logo"></h1>
+            <p class="hero-subtitle">Sonerezh Breizh a-vremañ</p>
+            <p class="hero-description">
+                Kerdin ha mouezh ioù, un kan-ha-diskan qui chante les histoires de notre temps. 
+                C'hwec'h arzour a zigolo tem an dinaskañ dre hengoun Breizh adnevesaet.
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- SECTION LE GROUPE -->
+    <section class="section groupe" id="groupe">
+        <div class="container">
+            <div class="content active" id="groupe-fr">
+                <h2 class="section-title">Le Groupe</h2>
+                <div class="groupe-grid">
+                    <div class="groupe-text fade-in">
+                        <h3>DINASKAÑ - Notre Nouvelle Création</h3>
+                        <p>Avec DINASKAÑ (émancipation), le groupe questionne les normes établies, interroge le passé et bouscule les préjugés. De l'ouvrière révoltée à la sorcière mal jugée, les chants dialoguent entre eux, tissent des liens entre passé et présent.</p>
+                        <p>L'art ancestral du chant breton s'entremêle à l'énergie créatrice du sextet, invitant le public à embarquer pour une odyssée entre mélancolie et révolte.</p>
+                        <div class="membres-list">
+                            <h4>Les Musiciens</h4>
+                            <ul>
+                                <li><strong>Sterenn DIRIDOLLOU</strong> - Chant</li>
+                                <li><strong>Marine LAVIGNE</strong> - Chant</li>
+                                <li><strong>Sterenn LE GUILLOU</strong> - Chant</li>
+                                <li><strong>Jonathan DOUR</strong> - Alto cinq cordes</li>
+                                <li><strong>Antoine LAHAY</strong> - Guitare douze cordes, guitare électrique</li>
+                                <li><strong>Julien STÉVENIN</strong> - Contrebasse</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="groupe-image fade-in">
+                        <img src="https://static.wixstatic.com/media/545133_c098ae6dc8df4158ada87a595b42295b~mv2.jpg/v1/crop/x_0,y_0,w_5083,h_5081/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBEN_CC_0333.jpg" alt="EBEN en concert">
+                    </div>
+                </div>
+            </div>
+<!-- CONTENU ANGLAIS -->
+<div class="content" id="groupe-en">
+    <h2 class="section-title">The Band</h2>
+    <div class="groupe-grid">
+        <div class="groupe-text fade-in">
+            <h3>DINASKAÑ - Our New Creation</h3>
+            <p>With DINASKAÑ (emancipation), the group questions established norms, interrogates the past and challenges prejudices. From the rebellious worker to the misunderstood witch, the songs dialogue with each other, weaving links between past and present.</p>
+            <p>The ancestral art of Breton singing intertwines with the sextet's creative energy, inviting the audience to embark on an odyssey between melancholy and revolt.</p>
+            <div class="membres-list">
+                <h4>The Musicians</h4>
+                <ul>
+                    <li><strong>Sterenn DIRIDOLLOU</strong> - Vocals</li>
+                    <li><strong>Marine LAVIGNE</strong> - Kan</li>
+                    <li><strong>Sterenn LE GUILLOU</strong> - Kan</li>
+                    <li><strong>Jonathan DOUR</strong> - Viola</li>
+                    <li><strong>Antoine LAHAY</strong> - 12-string guitar, electric guitar</li>
+                    <li><strong>Julien STÉVENIN</strong> - Double bass</li>
+                </ul>
+            </div>
+        </div>
+        <div class="groupe-image fade-in">
+            <img src="https://static.wixstatic.com/media/545133_c098ae6dc8df4158ada87a595b42295b~mv2.jpg/v1/crop/x_0,y_0,w_5083,h_5081/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBEN_CC_0333.jpg" alt="EBEN in concert">
+        </div>
+    </div>
+</div>
+
+<!-- CONTENU BRETON -->
+<div class="content" id="groupe-br">
+    <h2 class="section-title">Ar Strollad</h2>
+    <div class="groupe-grid">
+        <div class="groupe-text fade-in">
+            <h3>DINASKAÑ - Hon Nevezadenn</h3>
+            <p>Gant DINASKAÑ, ar strollad a c'houlenn ar reolennoù stabil, a enklask ar paseet ha a stourm ouzh ar raksoñjoù. Eus al labourerez emsavet d'ar sorserez fall-varnet, ar c'hanaouennoù a gomz etrezo, o wiadañ liammoù etre ar paseet hag ar prezant.</p>
+            <p>Arz henvoazel ar c'han breizhat a en em genstag gant nerzh krouiñ ar c'hwec'hved, o pediñ ar selaouerien da vont war un odyssey etre melkoni ha emsav.</p>
+            <div class="membres-list">
+                <h4>Ar Sonerien</h4>
+                <ul>
+                    <li><strong>Sterenn DIRIDOLLOU</strong> - Kan</li>
+                    <li><strong>Marine LAVIGNE</strong> - Kan</li>
+                    <li><strong>Sterenn LE GUILLOU</strong> - Kan</li>
+                    <li><strong>Jonathan DOUR</strong> - Alto</li>
+                    <li><strong>Antoine LAHAY</strong> - Gitar daouzek kordenn, gitar tredan</li>
+                    <li><strong>Julien STÉVENIN</strong> - Gourrebed</li>
+                </ul>
+            </div>
+        </div>
+        <div class="groupe-image fade-in">
+            <img src="https://static.wixstatic.com/media/545133_c098ae6dc8df4158ada87a595b42295b~mv2.jpg/v1/crop/x_0,y_0,w_5083,h_5081/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBEN_CC_0333.jpg" alt="EBEN war al leurenn">
+        </div>
+    </div>
+</div>
+    </section>
+
+
+<!-- SECTION MUSIQUE/ALBUMS -->
+<section class="section musique" id="musique">
+    <div class="container">
+        <!-- CONTENU FRANÇAIS -->
+        <div class="content active" id="musique-fr">
+            <h2 class="section-title">Nos Albums</h2>
+            <div class="albums-grid">
+                <div class="album-card fade-in">
+                    <div class="album-cover">
+                        <img src="https://i.imgur.com/1DTmjkR.png" alt="Album DINASKAÑ">
+                    </div>
+                    <h3>DINASKAÑ (2025)</h3>
+                    <div class="album-description">
+                        <p><strong>Un manifeste artistique qui signifie "désentraver" en breton.</strong> De nombreux titres sont un appel à l'émancipation et à la résistance contre les discours conservateurs : l'émancipation à travers la danse, les rencontres, les voyages, le droit des femmes à disposer de leur corps.</p>
+                        
+                        <p>Des titres comme <em>Dañs Ar Bleiz</em>, une danse symbolisant l'union contre le fascisme, et <em>Eostig Kuzh I</em>, un hymne à l'émancipation féminine, illustrent le fil conducteur de cet album.</p>
+                        
+                        <div class="credits">
+                            <p><strong>Direction artistique :</strong> Antoine Lahay</p>
+                            <p><strong>Avec :</strong> Ilyas Khan (tablas et beat box)</p>
+                            <p><strong>Textes :</strong> Marine Lavigne et Sterenn Le Guillou</p>
+                        </div>
+                        
+                        <p class="quote">Les textes puisent leur inspiration dans la tradition orale ainsi que dans d'autres univers poétiques, tels que ceux des studios Ghibli, de Rosalía et de Gaël Faye.</p>
+                    </div>
+                    <div class="streaming-links">
+                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Écouter nos albums</a>
+                    </div>
+                </div>
+                
+                <div class="album-card fade-in">
+                    <div class="album-cover">
+                        <img src="https://static.wixstatic.com/media/545133_b30a7db827674fc2a867b7ec2e388c4a~mv2_d_1417_2126_s_2.jpg/v1/fill/w_400,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBENvisuel.jpg" alt="Premier Album EBEN">
+                    </div>
+                    <h3>Premier Album (2019)</h3>
+                    <div class="album-description">
+                        <p>La sortie officielle du premier album d'EBEN a eu lieu en novembre 2019 lors du festival YAOUANK à Rennes.</p>
+                        
+                        <div class="credits">
+                            <p><strong>Enora JEGOU, Marine LAVIGNE, Sterenn LE GUILLOU :</strong> <em>Chant</em></p>
+                            <p><strong>Jonathan DOUR :</strong> <em>Alto</em></p>
+                            <p><strong>Antoine LAHAY :</strong> <em>Guitare électrique, guitare acoustique 12 cordes</em></p>
+                            <p><strong>Julien STEVENIN :</strong> <em>Contrebasse</em></p>
+                        </div>
+                        
+                        <div class="credits">
+                            <p><strong>Conseil artistique :</strong> Thomas MOISSON</p>
+                            <p><strong>Enregistrement et mixage :</strong> Antonin VOLSON</p>
+                            <p><strong>Graphisme :</strong> TNV design</p>
+                        </div>
+                        
+                        <p class="quote">"Eben", c'est l'Autre en breton. "Eben" vient d'ailleurs, elle apporte un regard neuf sur notre culture et notre environnement. Son regard est notre miroir, face à lui on se rend compte de nos différences et nos ressemblances, de nos divergences et nos convergences, de notre singularité comme de notre banalité. L'Autre questionne notre identité, elle l'enrichit, elle nous offre un bout de Soi, qui devient une partie de Nous.</p>
+                        
+                        <p class="quote">"Eben" est aussi la forme féminine d'Autrui. Le "deuxième genre", celle dont l'histoire est bien souvent racontée d'un point de vue masculin, comme Keben et Dahud, ces femmes de pouvoir reléguées au rang de pécheresses ou de sorcières. Dans cet album nous avons voulu donner voix à ces "autres": les femmes, les migrants, les minorités, les peuples autochtones et même la Terre, ces voix du silence que l'on a trop peu écouté, dans une langue qui s'est elle aussi tue pendant bien longtemps.</p>
+                    </div>
+                    <div class="streaming-links">
+                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Écouter nos albums</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENU ANGLAIS -->
+        <div class="content" id="musique-en">
+            <h2 class="section-title">Our Albums</h2>
+            <div class="albums-grid">
+                <div class="album-card fade-in">
+                    <div class="album-cover">
+                        <img src="https://i.imgur.com/1DTmjkR.png" alt="DINASKAÑ Album">
+                    </div>
+                    <h3>DINASKAÑ (June 2025)</h3>
+                    <div class="album-description">
+                        <p><strong>An artistic manifesto meaning "to unshackle" in Breton.</strong> Many tracks are a call for emancipation and resistance against conservative discourse: emancipation through dance, encounters, travel, and women's rights over their own bodies.</p>
+                        
+                        <p>Tracks like <em>Dañs Ar Bleiz</em>, a dance symbolizing unity against fascism, and <em>Eostig Kuzh I</em>, a hymn to female emancipation, illustrate the album's central theme.</p>
+                        
+                        <div class="credits">
+                            <p><strong>Artistic Direction:</strong> Antoine Lahay</p>
+                            <p><strong>Featuring:</strong> Ilyas Khan (tablas and beatbox)</p>
+                            <p><strong>Lyrics:</strong> Marine Lavigne and Sterenn Le Guillou</p>
+                        </div>
+                        
+                        <p class="quote">The lyrics draw inspiration from oral tradition as well as other poetic universes, such as those of Studio Ghibli, Rosalía, and Gaël Faye.</p>
+                    </div>
+                    <div class="streaming-links">
+                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Listen to our albums</a>
+                    </div>
+                </div>
+                
+                <div class="album-card fade-in">
+                    <div class="album-cover">
+                        <img src="https://static.wixstatic.com/media/545133_b30a7db827674fc2a867b7ec2e388c4a~mv2_d_1417_2126_s_2.jpg/v1/fill/w_400,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBENvisuel.jpg" alt="First EBEN Album">
+                    </div>
+                    <h3>First Album (2019)</h3>
+                    <div class="album-description">
+                        <p>EBEN's first album was officially released in November 2019 during the YAOUANK festival in Rennes.</p>
+                        
+                        <div class="credits">
+                            <p><strong>Enora JEGOU, Marine LAVIGNE, Sterenn LE GUILLOU:</strong> <em>Vocals</em></p>
+                            <p><strong>Jonathan DOUR:</strong> <em>Viola</em></p>
+                            <p><strong>Antoine LAHAY:</strong> <em>Electric guitar, 12-string acoustic guitar</em></p>
+                            <p><strong>Julien STEVENIN:</strong> <em>Double bass</em></p>
+                        </div>
+                        
+                        <div class="credits">
+                            <p><strong>Artistic Advisor:</strong> Thomas MOISSON</p>
+                            <p><strong>Recording and Mixing:</strong> Antonin VOLSON</p>
+                            <p><strong>Graphic Design:</strong> TNV design</p>
+                        </div>
+                        
+                        <p class="quote">"Eben" means "the Other" in Breton. "Eben" comes from elsewhere, bringing a fresh perspective on our culture and environment. Their gaze is our mirror, through which we realize our differences and similarities, our divergences and convergences, our uniqueness as well as our commonness. The Other questions our identity, enriches it, offers us a piece of Themselves, which becomes part of Us.</p>
+                        
+                        <p class="quote">"Eben" is also the feminine form of "Other." The "second gender," whose story is often told from a masculine perspective, like Keben and Dahud, powerful women relegated to the rank of sinners or witches. In this album, we wanted to give voice to these "others": women, migrants, minorities, indigenous peoples, and even the Earth—these voices of silence that have been too rarely heard, in a language that has also been silenced for too long.</p>
+                    </div>
+                    <div class="streaming-links">
+                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Listen to our albums</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENU BRETON -->
+        <div class="content" id="musique-br">
+            <h2 class="section-title">Hon pladennoù</h2>
+            <div class="albums-grid">
+                <div class="album-card fade-in">
+                    <div class="album-cover">
+                        <img src="https://i.imgur.com/1DTmjkR.png" alt="Albom DINASKAÑ">
+                    </div>
+                    <h3>DINASKAÑ (2025)</h3>
+                    <div class="album-description">
+                        <p><strong>Ur manifesto arzel a dalv "dientrammañ" e brezhoneg.</strong> Kalz a donennoù a zo ur galv d'an emansipiñ ha d'ar rezistañs a-enep ar prezegennoù mirour: an dieubiñ dre zañs, kejadennoù, beajoù, gwir ar merc'hed da ren war o c'horf.</p>
+                        
+                        <p>Tonennoù evel <em>Dañs Ar Bleiz</em>, un dañs oc'h aroueziñ an unaniezh a-enep ar fachouriezh, hag <em>Eostig Kuzh I</em>, ur meuleudi d'an dieubidigezh ar merc'hed, a ziskouez tem pennañ an albom.</p>
+                        
+                        <div class="credits">
+                            <p><strong>Renerezh arzel:</strong> Antoine Lahay</p>
+                            <p><strong>Gant:</strong> Ilyas Khan (tablas ha beat box)</p>
+                            <p><strong>Testennoù:</strong> Marine Lavigne ha Sterenn Le Guillou</p>
+                        </div>
+                        
+                        <p class="quote">An testennoù a denn o awen eus an hengoun dre gomz hag ivez eus bedoù barzhoniel all, evel re ar studioioù Ghibli, Rosalía ha Gaël Faye.</p>
+                    </div>
+                    <div class="streaming-links">
+                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Selaou hor albomioù</a>
+                    </div>
+                </div>
+                
+                <div class="album-card fade-in">
+                    <div class="album-cover">
+                        <img src="https://static.wixstatic.com/media/545133_b30a7db827674fc2a867b7ec2e388c4a~mv2_d_1417_2126_s_2.jpg/v1/fill/w_400,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBENvisuel.jpg" alt="Albom kentañ EBEN">
+                    </div>
+                    <h3>Albom Kentañ (2019)</h3>
+                    <div class="album-description">
+                        <p>Albom kentañ EBEN a zo bet embannet ofisiel e miz Du 2019 e-pad gouel YAOUANK e Roazhon.</p>
+                        
+                        <div class="credits">
+                            <p><strong>Enora JEGOU, Marine LAVIGNE, Sterenn LE GUILLOU:</strong> <em>Kan</em></p>
+                            <p><strong>Jonathan DOUR:</strong> <em>Alto</em></p>
+                            <p><strong>Antoine LAHAY:</strong> <em>Gitar tredan, gitar akoustik 12 kordenn</em></p>
+                            <p><strong>Julien STEVENIN:</strong> <em>Kontrebas</em></p>
+                        </div>
+                        
+                        <div class="credits">
+                            <p><strong>Kuzulier arzel:</strong> Thomas MOISSON</p>
+                            <p><strong>Enrolladur ha meskadur:</strong> Antonin VOLSON</p>
+                            <p><strong>Grafism:</strong> TNV design</p>
+                        </div>
+                        
+                        <p class="quote">"Eben", an Arall eo e brezhoneg. "Eben" a zeu eus lec'h all, o tegas ur sell nevez war hor sevenadur hag hor endro. He sell eo hor melezour, dirazañ e komprenomp hor disheñvelderioù hag hor c'heñvelderioù, hor forc'hentezioù hag hor c'henglotadennoù, hor spesialded evel hor boutin. An Arall a c'houlenn hor identelezh, he finviañ a ra, kinnig a ra deomp un tamm eus He-unan, hag a zeu da vezañ ul lodenn ac'hanomp.</p>
+                        
+                        <p class="quote">"Eben" a zo ivez stumm benel "Arall". An "eil reizh", hini ma vez kontet he istor alies eus ur savboent gourel, evel Keben ha Dahud, merc'hed galloudus lakaet da vezañ pec'herezed pe sorserezed. En albom-mañ hon eus klasket reiñ mouezh d'an "arall"-se: ar merc'hed, an enbroidi, ar minorelezhoù, ar pobloù orin ha zoken an Douar, mouezhioù ar sioulder bet re nebeut selaouet, en ur yezh he deus ivez tevet e-pad pell amzer.</p>
+                    </div>
+                    <div class="streaming-links">
+                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Selaou hor albomioù</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- SECTION VIDEOS -->
+    <section class="section videos" id="videos">
+        <div class="container">
+            <div class="content active" id="videos-fr">
+                <h2 class="section-title">Vidéos</h2>
+                <div class="videos-grid">
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/UgcIBYp0ghs" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Performance Live</div>
+                        <div class="video-description">Concert en direct du groupe EBEN</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/4vB2AtAyg6c" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Dinaskañ</div>
+                        <div class="video-description">Live session</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/aiqGmPLKfG4" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Concert</div>
+                        <div class="video-description">Extrait de concert live</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/fkmnLTmnHpo" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Yaouank</div>
+                        <div class="video-description">Performance au festival Yaouank</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/w2PSpQVfmdE" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Live Performance</div>
+                        <div class="video-description">Concert live du groupe</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/JCGcpVO76EY" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Performance</div>
+                        <div class="video-description">Extrait musical en live</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content" id="videos-en">
+                <h2 class="section-title">Videos</h2>
+                <div class="videos-grid">
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/UgcIBYp0ghs" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Live Performance</div>
+                        <div class="video-description">Live concert by EBEN</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/4vB2AtAyg6c" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Live Session</div>
+                        <div class="video-description">Acoustic session by the band</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/aiqGmPLKfG4" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Concert</div>
+                        <div class="video-description">Live concert excerpt</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/fkmnLTmnHpo" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Yaouank</div>
+                        <div class="video-description">Performance at Yaouank festival</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/w2PSpQVfmdE" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Live Performance</div>
+                        <div class="video-description">Live concert by the band</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/JCGcpVO76EY" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Performance</div>
+                        <div class="video-description">Live musical excerpt</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content" id="videos-br">
+                <h2 class="section-title">Videoioù</h2>
+                <div class="videos-grid">
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/UgcIBYp0ghs" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Kensevadenn bev</div>
+                        <div class="video-description">Kensevadenn bev gant ar strollad EBEN</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/4vB2AtAyg6c" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Session bev</div>
+                        <div class="video-description">Session akoustik ar strollad</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/aiqGmPLKfG4" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Kensevadenn</div>
+                        <div class="video-description">Tamm eus ur gensevadenn bev</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/fkmnLTmnHpo" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Yaouank</div>
+                        <div class="video-description">Kensevadenn e gouel Yaouank</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/w2PSpQVfmdE" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Kensevadenn bev</div>
+                        <div class="video-description">Kensevadenn bev ar strollad</div>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/JCGcpVO76EY" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">EBEN - Kensevadenn</div>
+                        <div class="video-description">Tamm sonerezh bev</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- SECTION AGENDA -->
+<section class="section" id="agenda" style="background: #FDECE5;">
+    <div class="container">
+        <!-- CONTENU FRANÇAIS -->
+        <div class="content active" id="agenda-fr">
+            <h2 class="section-title">Agenda 2025</h2>
+            <div class="agenda-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Lieu</th>
+                            <th>Événement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="date-col">11 janvier 2025</td>
+                            <td>Plougastel (29)</td>
+                            <td>Freizh-Noz</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">25 janvier 2025</td>
+                            <td>Ambon (56)</td>
+                            <td>Fest-Noz</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">26 avril 2025</td>
+                            <td>Questembert</td>
+                            <td>La Lune Rousse</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">10 mai 2025</td>
+                            <td>Aberystwyth (Pays de Galles)</td>
+                            <td>Cymru-Llydaw Festival</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">26 juillet 2025</td>
+                            <td>Quimper (29)</td>
+                            <td>Festival de Cornouaille</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">3 août 2025</td>
+                            <td>Lorient (56)</td>
+                            <td>Festival Interceltique</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- CONTENU ANGLAIS -->
+        <div class="content" id="agenda-en">
+            <h2 class="section-title">Tour Dates 2025</h2>
+            <div class="agenda-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Venue</th>
+                            <th>Event</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="date-col">January 11, 2025</td>
+                            <td>Plougastel (29)</td>
+                            <td>Freizh-Noz</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">January 25, 2025</td>
+                            <td>Ambon (56)</td>
+                            <td>Fest-Noz</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">April 26, 2025</td>
+                            <td>Questembert</td>
+                            <td>La Lune Rousse</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">May 10, 2025</td>
+                            <td>Aberystwyth (Wales)</td>
+                            <td>Cymru-Llydaw Festival</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">July 26, 2025</td>
+                            <td>Quimper (29)</td>
+                            <td>Festival de Cornouaille</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">August 3, 2025</td>
+                            <td>Lorient (56)</td>
+                            <td>Interceltique Festival</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- CONTENU BRETON -->
+        <div class="content" id="agenda-br">
+            <h2 class="section-title">Deiziataer 2025</h2>
+            <div class="agenda-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Deiziad</th>
+                            <th>Lec'h</th>
+                            <th>Darvoud</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="date-col">11 a viz Genver</td>
+                            <td>Plougastel (29)</td>
+                            <td>Freizh-Noz</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">25 a viz Genver</td>
+                            <td>Ambon (56)</td>
+                            <td>Fest-Noz</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">26 a viz Ebrel</td>
+                            <td>Kistreberzh</td>
+                            <td>La Lune Rousse</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">10 a viz Mae</td>
+                            <td>Aberystwyth (Kembre)</td>
+                            <td>Gouel Cymru-Llydaw</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">26 a viz Gouere</td>
+                            <td>Kemper (29)</td>
+                            <td>Gouel Kerne</td>
+                        </tr>
+                        <tr>
+                            <td class="date-col">3 a viz Eost</td>
+                            <td>An Oriant (56)</td>
+                            <td>Gouel Etrekeltiek</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- SECTION BOOKING SIMPLIFIÉE -->
+    <section class="section booking" id="booking">
+        <div class="container">
+            <div class="content active" id="booking-fr">
+                <h2 class="section-title">Booking</h2>
+                <div class="booking-grid">
+                    <div class="booking-info fade-in">
+                        <h3>Contacts Professionnels</h3>
+                        
+                        <div class="contact-item">
+                            <h4>Concerts / International</h4>
+                            <p><strong>Naïade Productions</strong></p>
+                            <p>📞 02 99 85 44 04</p>
+                            <p>✉️ contact@naiadeproductions.com</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>Fest-noz / Bals</h4>
+                            <p><strong>Sterenn LE GUILLOU</strong></p>
+                            <p>📞 06 58 65 74 63</p>
+                            <p>✉️ ebenofisiel@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-info fade-in">
+                        <h3>Documents Techniques</h3>
+                        
+                        <div class="contact-item">
+                            <h4>📋 Documents à télécharger</h4>
+                            <p>• Fiche technique disponible sur demande</p>
+                            <p>• Kit presse (photos HD, bio)</p>
+                            <p>• Rider technique et hospitalité</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content" id="booking-en">
+                <h2 class="section-title">Booking</h2>
+                <div class="booking-grid">
+                    <div class="booking-info fade-in">
+                        <h3>Professional Contacts</h3>
+                        
+                        <div class="contact-item">
+                            <h4>Concerts / International</h4>
+                            <p><strong>Naïade Productions</strong></p>
+                            <p>📞 +33 2 99 85 44 04</p>
+                            <p>✉️ contact@naiadeproductions.com</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>Fest-noz / Folk Dances</h4>
+                            <p><strong>Jonathan DOUR</strong></p>
+                            <p>📞 +33 6 86 16 55 36</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-info fade-in">
+                        <h3>Technical Documents</h3>
+                        
+                        <div class="contact-item">
+                            <h4>📋 Documents to download</h4>
+                            <p>• Technical sheet available on request</p>
+                            <p>• Press kit (HD photos, bio)</p>
+                            <p>• Technical rider and hospitality</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content" id="booking-br">
+                <h2 class="section-title">Darempredoù</h2>
+                <div class="booking-grid">
+                    <div class="booking-info fade-in">
+                        <h3>Darempredoù Proffesionel</h3>
+                        
+                        <div class="contact-item">
+                            <h4>Kensevedadennoù / Etrevroadel</h4>
+                            <p><strong>Naïade Productions</strong></p>
+                            <p>📞 02 99 85 44 04</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>Festoù-noz / Balioù</h4>
+                            <p><strong>Jonathan DOUR</strong></p>
+                            <p>📞 06 86 16 55 36</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-info fade-in">
+                        <h3>Teulioù Teknikel</h3>
+                        
+                        <div class="contact-item">
+                            <h4>📋 Teulioù da bellgargañ</h4>
+                            <p>• Fich teknikel da c'houlenn</p>
+                            <p>• Kit-presse (luc'hskeudennoù HD, buhez)</p>
+                            <p>• Rider teknikel ha degemer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // GESTION DES LANGUES
+        function setLanguage(lang) {
+            // Cacher tous les contenus
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Afficher le contenu de la langue sélectionnée
+            document.querySelectorAll(`[id$="-${lang}"]`).forEach(content => {
+                content.classList.add('active');
+            });
+            
+            // Mettre à jour les boutons de langue
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Mettre à jour les textes de navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const text = link.getAttribute('data-' + lang);
+                if (text) {
+                    link.textContent = text;
+                }
+            });
+        }
+
+        // FILTRAGE DES CONCERTS
+        function filterConcerts(filter) {
+            const concertCards = document.querySelectorAll('.concert-card');
+            
+            // Mettre à jour les boutons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Filtrer les concerts
+            concertCards.forEach(card => {
+                if (filter === 'all') {
+                    card.style.display = 'block';
+                } else if (filter === 'upcoming' && card.classList.contains('upcoming')) {
+                    card.style.display = 'block';
+                } else if (filter === 'past' && card.classList.contains('past')) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // NAVIGATION SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ANIMATIONS AU SCROLL
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec la classe fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // HEADER SCROLL EFFECT
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.padding = '0.5rem 0';
+                header.style.background = 'rgba(253, 236, 229, 0.98)';
+            } else {
+                header.style.padding = '1rem 0';
+                header.style.background = 'rgba(253, 236, 229, 0.95)';
+            }
+        });
+    </script>
+    <!-- Ajoutez ce code juste avant la fermeture </body> de votre HTML -->
+
+<script>
+// AJUSTEMENT DYNAMIQUE DU HERO PADDING
+function adjustHeroPadding() {
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.hero');
+    
+    if (header && hero) {
+        // Calculer la hauteur réelle du header
+        const headerHeight = header.offsetHeight;
+        
+        // Appliquer seulement sur mobile
+        if (window.innerWidth <= 768) {
+            // Ajouter 20px de marge de sécurité
+            hero.style.paddingTop = (headerHeight + 20) + 'px';
+        } else {
+            // Réinitialiser pour desktop
+            hero.style.paddingTop = '';
+        }
+    }
+}
+
+// Exécuter au chargement de la page
+window.addEventListener('load', adjustHeroPadding);
+
+// Exécuter quand on redimensionne la fenêtre
+window.addEventListener('resize', adjustHeroPadding);
+
+// Exécuter après un court délai pour s'assurer que tout est chargé
+setTimeout(adjustHeroPadding, 100);
+
+// Ré-exécuter quand on change de langue (au cas où ça changerait la hauteur)
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        setTimeout(adjustHeroPadding, 50);
+    });
+});
+</script>
+
+</body>
+</html>
+</body>
