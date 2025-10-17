@@ -21,6 +21,7 @@
         }
 
 
+
         /* HEADER FIXE AVEC NAVIGATION MULTILINGUE */
         .header {
             background: rgba(253, 236, 229, 0.95);
@@ -128,16 +129,26 @@
             background: white;
         }
 
+/* JUSTIFICATION DES TEXTES - SAUF HERO */
+p:not(.hero-description):not(.hero-subtitle), 
+.album-description, 
+.video-description, 
+.quote, 
+.credits {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
         /* HERO SECTION */
         .hero {
         margin-top: 0;
     height: 100vh; /* Retour à la hauteur complète */
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://static.wixstatic.com/media/545133_1b02fffe138e401fa79add9202f65733~mv2.jpg/v1/crop/x_333,y_0,w_7327,h_5331/fill/w_1920,h_1080,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBEN_CC_0057.jpg') center/cover;
+                url('https://i.imgur.com/nyduZv9.jpeg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+     text-align: center !important;
     color: white;
     position: relative;
 }
@@ -411,7 +422,8 @@
         }
 
         .credits p {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
         }
 
         .quote {
@@ -810,7 +822,6 @@
             <p class="hero-subtitle">Musique Bretonne Actuelle</p>
             <p class="hero-description">
                 Des voix et des cordes, un kan-ha-diskan qui chante les histoires de notre temps. 
-                Six artistes explorent l'émancipation à travers la tradition bretonne revisitée.
             </p>
         </div>
 
@@ -820,7 +831,6 @@
             <p class="hero-subtitle">Today's Breton Traditional Music</p>
             <p class="hero-description">
                 Voices and strings, a kan-ha-diskan that sings the stories of our time. 
-                Six artists explore emancipation through revisited Breton tradition.
             </p>
         </div>
 
@@ -829,8 +839,7 @@
             <h1><img src="https://i.imgur.com/KqWW6f8.png" alt="EBEN Logo"></h1>
             <p class="hero-subtitle">Sonerezh Breizh a-vremañ</p>
             <p class="hero-description">
-                Kerdin ha mouezh ioù, un kan-ha-diskan qui chante les histoires de notre temps. 
-                C'hwec'h arzour a zigolo tem an dinaskañ dre hengoun Breizh adnevesaet.
+                Kerdin ha mouezhioù, ur c'han-ha-diskan a gan istorioù a-vremañ
             </p>
         </div>
     </div>
@@ -843,13 +852,13 @@
                 <h2 class="section-title">Le Groupe</h2>
                 <div class="groupe-grid">
                     <div class="groupe-text fade-in">
-                        <h3>DINASKAÑ - Notre Nouvelle Création</h3>
-                        <p>Avec DINASKAÑ (émancipation), le groupe questionne les normes établies, interroge le passé et bouscule les préjugés. De l'ouvrière révoltée à la sorcière mal jugée, les chants dialoguent entre eux, tissent des liens entre passé et présent.</p>
-                        <p>L'art ancestral du chant breton s'entremêle à l'énergie créatrice du sextet, invitant le public à embarquer pour une odyssée entre mélancolie et révolte.</p>
+                        <h3>PAR L’AUTRE NAÎT LA FORCE</h3>
+                        <p>EBEN, c’est l’alchimie entre deux voix – Marine Lavigne et Sterenn Le Guillou – et trois instrumentistes : Antoine Lahay à la guitare, Julien Stévenin à la contrebasse et Jonathan Dour au violon alto. Leur nom, qui signifie “l’Autre” au féminin en langue bretonne, traduit leur volonté de donner place et résonance à celles et ceux que l’histoire réduit au silence, dans une langue qui elle aussi a été tue pendant bien longtemps  Leur 1er album éponyme s’était nourri de la thématique de l’altérité et avait déjà posé les bases d’une esthétique à la fois ancrée et située dans le présent, en intégrant des récits actuels et des références multiples. Avec Dinaskañ, leur 2ème album, le groupe explore ses liens profonds avec son héritage traditionnel tout en célébrant la beauté furieuse de la résilience, du désir féminin et de l’émancipation.</p>
+                        <p>A la croisée des musiques traditionnelles et des créations contemporaines, leur chant incarne une Bretagne vivante qui refuse l’archétype folklorique et choisit la puissance du dialogue entre héritage et invention.</p>
                         <div class="membres-list">
-                            <h4>Les Musiciens</h4>
+                            <h4>Les membres du groupe</h4>
                             <ul>
-                                <li><strong>Sterenn DIRIDOLLOU</strong> - Chant</li>
+    
                                 <li><strong>Marine LAVIGNE</strong> - Chant</li>
                                 <li><strong>Sterenn LE GUILLOU</strong> - Chant</li>
                                 <li><strong>Jonathan DOUR</strong> - Alto cinq cordes</li>
@@ -859,7 +868,7 @@
                         </div>
                     </div>
                     <div class="groupe-image fade-in">
-                        <img src="https://static.wixstatic.com/media/545133_c098ae6dc8df4158ada87a595b42295b~mv2.jpg/v1/crop/x_0,y_0,w_5083,h_5081/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBEN_CC_0333.jpg" alt="EBEN en concert">
+                        <img src="https://i.imgur.com/iVRwn04.jpeg" alt="EBEN en concert">
                     </div>
                 </div>
             </div>
@@ -868,13 +877,13 @@
     <h2 class="section-title">The Band</h2>
     <div class="groupe-grid">
         <div class="groupe-text fade-in">
-            <h3>DINASKAÑ - Our New Creation</h3>
-            <p>With DINASKAÑ (emancipation), the group questions established norms, interrogates the past and challenges prejudices. From the rebellious worker to the misunderstood witch, the songs dialogue with each other, weaving links between past and present.</p>
-            <p>The ancestral art of Breton singing intertwines with the sextet's creative energy, inviting the audience to embark on an odyssey between melancholy and revolt.</p>
+            <h3>BY THE OTHER COMES STRENGTH</h3>
+            <p>EBEN is the alchemy of two voices, Sterenn Diridollou, Marine Lavigne and Sterenn Le Guillou, and three instrumentalists: Antoine Lahay (guitar), Julien Stévenin (double bass) and Jonathan Dour (viola). Their name, meaning “The Other” in the feminine form of Breton, reflects a will to give space and resonance to those silenced by history, in a language that has also been silenced for a long time. Their first self-titled album explored the theme of otherness and laid the foundations for an aesthetic rooted in both heritage and contemporary narratives.</p>
+            <p>At the crossroads of traditional music and contemporary creation, their sound embodies a living Brittany, one that rejects folkloric stereotypes in favor of dialogue between legacy and invention, memory and emancipation.</p>
             <div class="membres-list">
-                <h4>The Musicians</h4>
+                <h4>Group members</h4>
                 <ul>
-                    <li><strong>Sterenn DIRIDOLLOU</strong> - Vocals</li>
+                
                     <li><strong>Marine LAVIGNE</strong> - Kan</li>
                     <li><strong>Sterenn LE GUILLOU</strong> - Kan</li>
                     <li><strong>Jonathan DOUR</strong> - Viola</li>
@@ -884,7 +893,7 @@
             </div>
         </div>
         <div class="groupe-image fade-in">
-            <img src="https://static.wixstatic.com/media/545133_c098ae6dc8df4158ada87a595b42295b~mv2.jpg/v1/crop/x_0,y_0,w_5083,h_5081/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBEN_CC_0333.jpg" alt="EBEN in concert">
+            <img src="https://i.imgur.com/iVRwn04.jpeg" alt="EBEN in concert">
         </div>
     </div>
 </div>
@@ -894,13 +903,13 @@
     <h2 class="section-title">Ar Strollad</h2>
     <div class="groupe-grid">
         <div class="groupe-text fade-in">
-            <h3>DINASKAÑ - Hon Nevezadenn</h3>
-            <p>Gant DINASKAÑ, ar strollad a c'houlenn ar reolennoù stabil, a enklask ar paseet ha a stourm ouzh ar raksoñjoù. Eus al labourerez emsavet d'ar sorserez fall-varnet, ar c'hanaouennoù a gomz etrezo, o wiadañ liammoù etre ar paseet hag ar prezant.</p>
-            <p>Arz henvoazel ar c'han breizhat a en em genstag gant nerzh krouiñ ar c'hwec'hved, o pediñ ar selaouerien da vont war un odyssey etre melkoni ha emsav.</p>
+            <h3>DIOUZH EBEN E TEU AN NERZH</h3>
+            <p>Alkemiezh div vouezh eo EBEN, reoù Marine Lavigne ha Sterenn Le Guillou, hag heson tri soner : Antoine Lahay (gitar), Julien Stévenin (gourrebed), ha Jonathan Dour (alto). O anv a arouez o c’hoant da reiñ ton ha son d’ar re bet damvouget en istor, en ur yezh a glever ken nebeut ha tra. O fladenn gentañ bet maget gant mennozh an allded a roe da glevet ur sonerezh gwriziennet en hengoun koulz hag e liamm gant an amzer a-vremañ, o veskañ testennioù a-vremañ gant levezonoù liesseurt. Gant o eil fladenn Dinaskañ ez a Eben donoc’h en he liammoù gant an hêrezh hengounel, o lidañ war-un-dro kened dizoñv an nerzh buhez, ar c’hoant benel hag an dinaskañ.</p>
+            <p>He c’han a enkorf spered bev Breizh, etre sonerezhioù hengounel ha krouidigezhioù a-vremañ, o nac’hañ skeudenn-skouer ar folkloraj hag o tibab nerzh ar c’hendiviz etre an hêrezh hag an ijin.</p>
             <div class="membres-list">
-                <h4>Ar Sonerien</h4>
+                <h4>Izili ar strollad</h4>
                 <ul>
-                    <li><strong>Sterenn DIRIDOLLOU</strong> - Kan</li>
+                
                     <li><strong>Marine LAVIGNE</strong> - Kan</li>
                     <li><strong>Sterenn LE GUILLOU</strong> - Kan</li>
                     <li><strong>Jonathan DOUR</strong> - Alto</li>
@@ -910,7 +919,7 @@
             </div>
         </div>
         <div class="groupe-image fade-in">
-            <img src="https://static.wixstatic.com/media/545133_c098ae6dc8df4158ada87a595b42295b~mv2.jpg/v1/crop/x_0,y_0,w_5083,h_5081/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBEN_CC_0333.jpg" alt="EBEN war al leurenn">
+            <img src="https://i.imgur.com/iVRwn04.jpeg" alt="EBEN war al leurenn">
         </div>
     </div>
 </div>
@@ -919,65 +928,81 @@
 
 <!-- SECTION MUSIQUE/ALBUMS -->
 <section class="section musique" id="musique">
-    <div class="container">
-        <!-- CONTENU FRANÇAIS -->
-        <div class="content active" id="musique-fr">
-            <h2 class="section-title">Nos Albums</h2>
-            <div class="albums-grid">
+  <div class="container">
+
+    <!-- CONTENU FRANÇAIS -->
+    <div class="content active" id="musique-fr">
+      <h2 class="section-title">Nos Albums</h2>
+      <div class="albums-grid">
                 <div class="album-card fade-in">
                     <div class="album-cover">
                         <img src="https://i.imgur.com/1DTmjkR.png" alt="Album DINASKAÑ">
                     </div>
                     <h3>DINASKAÑ (2025)</h3>
                     <div class="album-description">
-                        <p><strong>Un manifeste artistique qui signifie "désentraver" en breton.</strong> De nombreux titres sont un appel à l'émancipation et à la résistance contre les discours conservateurs : l'émancipation à travers la danse, les rencontres, les voyages, le droit des femmes à disposer de leur corps.</p>
+                        <h4>DINASKAÑ, UN MANIFESTE POUR L'ÉMANCIPATION</h4>
                         
-                        <p>Des titres comme <em>Dañs Ar Bleiz</em>, une danse symbolisant l'union contre le fascisme, et <em>Eostig Kuzh I</em>, un hymne à l'émancipation féminine, illustrent le fil conducteur de cet album.</p>
+                        <p class="quote">Après plus de sept années passées à porter leurs chants à danser sur les routes de Bretagne et d’Europe, EBEN amorce un tournant décisif avec la sortie de son deuxième album, Dinaskañ. Ce terme breton, qui signifie  “désentraver”, donne la clé de lecture de ce projet né d’un désir commun : affirmer une liberté artistique sans compromis et inscrire la tradition dans le présent. Plus qu’un simple recueil de chansons, Dinaskañ est pensé comme un manifeste qui s’ancre dans l’héritage du chant breton tout en le confrontant aux réalités d’aujourd’hui. Inspiré par les luttes et les voix trop souvent réduites au silence, il donne chair à des récits contemporains – de l’ouvrière révoltée à la danseuse insoumise, de la sorcière condamnée au voyageur rêveur – et transforme la mémoire en un espace de résistance vivante.</p>
+                        <h4>DES TRADITIONS DÉSENTRAVÉES</h4>
+                        <p class="quote">Dinaskañ se déploie comme un territoire en tension entre racines et inventions. Ancré dans le kan-ha-diskan et les gwerzioù, piliers de la tradition bretonne, EBEN ouvre pourtant ses horizons bien au-delà, revendiquant pleinement l’hybridation : chants polyphoniques, percussions galiciennes et indiennes, et arrangements orchestraux s’entremêlent aux cordes et aux voix. De là naît une architecture musicale qui convoque le folk organique, les atmosphères cinématographiques de The Cinematic Orchestra, la ferveur polyphonique de La Mòssa et l’intensité brute de Lankum. Dinaskañ apparaît alors comme un disque pluriel, où danse et transe se nourrissent de mélancolie, et où l’appel à la liberté s’incarne dans des voix puissantes, délicates et frontales. Dinaskañ transforme la tradition en matière vivante, façonnée par une écriture qui conjugue émotion immédiate et profondeur esthétique.</p>
+                        
                         
                         <div class="credits">
-                            <p><strong>Direction artistique :</strong> Antoine Lahay</p>
+                            <p><strong>DISTRIBUTION :</strong>
+                            <p><strong>Marine Lavigne : chant</strong>
+                            <p><strong>Sterenn Le Guillou : chant</strong>
+                            <p><strong>Sterenn Diridollou : chant</strong>
+                            <p><strong>Antoine Lahay : guitare douze cordes, guitare électrique</strong>
+                            <p><strong>Julien Stévenin : contrebasse</strong>
+                            <p><strong>Jonathan Dour : alto 5 cordes</strong>
                             <p><strong>Avec :</strong> Ilyas Khan (tablas et beat box)</p>
-                            <p><strong>Textes :</strong> Marine Lavigne et Sterenn Le Guillou</p>
+                                <p><strong>Direction artistique :</strong> Antoine Lahay</p>
+                            <p><strong>Autrices</strong> Marine Lavigne et Sterenn Le Guillou</p>
+                            <p><strong>Enregistrement</strong> Studio de Bretagne à Ploërmel (56) </p>
+                            <p><strong>Mixage et Mastering</strong> Studio de Bretagne à Ploërmel (56) et Incisive Mastering à Nantes (44) ©2025 Arfolk</p>
+                            <p><strong>Photos</strong> ©Charlaine Croguennec</p>
                         </div>
-                        
-                        <p class="quote">Les textes puisent leur inspiration dans la tradition orale ainsi que dans d'autres univers poétiques, tels que ceux des studios Ghibli, de Rosalía et de Gaël Faye.</p>
-                    </div>
-                    <div class="streaming-links">
-                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Écouter nos albums</a>
-                    </div>
-                </div>
+                     
+                  </div>
+    <div class="streaming-links" style="flex-direction: column; gap: 1rem;">
+        <a href="https://fanlink.tv/dnskE" class="streaming-btn" target="_blank">Écouter notre album</a>
+        <a href="https://arfolk.bzh/boutique/eben-dinaskan/" class="streaming-btn" target="_blank">Acheter notre album</a>
+    </div>
+</div>
                 
                 <div class="album-card fade-in">
                     <div class="album-cover">
                         <img src="https://static.wixstatic.com/media/545133_b30a7db827674fc2a867b7ec2e388c4a~mv2_d_1417_2126_s_2.jpg/v1/fill/w_400,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBENvisuel.jpg" alt="Premier Album EBEN">
                     </div>
-                    <h3>Premier Album (2019)</h3>
+                    <h3>EBEN (2019)</h3>
                     <div class="album-description">
-                        <p>La sortie officielle du premier album d'EBEN a eu lieu en novembre 2019 lors du festival YAOUANK à Rennes.</p>
+                        <h4>"Eben", c'est l'autre en breton.</h4>
+                        
+                        <p class="quote">"Eben" vient d’ailleurs, elle apporte un regard neuf sur notre culture et notre environnement. Son regard est notre miroir, face à lui on se rend compte de nos différences et nos ressemblances, de nos divergences et nos convergences, de notre singularité comme de notre banalité. L’Autre questionne notre identité, elle l’enrichit, elle nous offre un bout de Soi, qui devient une partie de Nous.</p>
+                        <p class="quote">“Eben” est aussi la forme féminine d’Autrui. Le “deuxième genre”, celle dont l’histoire est bien souvent racontée d’un point de vue masculin, comme Keben et  Dahud, ces femmes de pouvoir reléguées au rang de pécheresses ou de sorcières. Dans cet album nous avons voulu donner voix à ces “autres”: les femmes, les migrants, les minorités, les peuples autochtones et même la Terre, ces voix du silence que l’on a trop peu écouté, dans une langue qui s’est elle aussi tue pendant bien longtemps.</p>
+                        
                         
                         <div class="credits">
-                            <p><strong>Enora JEGOU, Marine LAVIGNE, Sterenn LE GUILLOU :</strong> <em>Chant</em></p>
-                            <p><strong>Jonathan DOUR :</strong> <em>Alto</em></p>
-                            <p><strong>Antoine LAHAY :</strong> <em>Guitare électrique, guitare acoustique 12 cordes</em></p>
-                            <p><strong>Julien STEVENIN :</strong> <em>Contrebasse</em></p>
+                            <p><strong>DISTRIBUTION :</strong>
+                            <p><strong>Marine Lavigne : chant</strong>
+                            <p><strong>Sterenn Le Guillou : chant</strong>
+                            <p><strong>Enora Jegou : chant</strong>
+                            <p><strong>Antoine Lahay : guitare douze cordes, guitare électrique</strong>
+                            <p><strong>Julien Stévenin : contrebasse</strong>
+                            <p><strong>Jonathan Dour : alto 5 cordes</strong>
+                                <p><strong>Conseil artistique, management</strong> Thomas Moisson</p>
+                            <p><strong>Autrice</strong> Marine Lavigne</p>
+                            <p><strong>Enregistrement et mixage</strong> Antonin Volson </p>
+                            <p><strong>Graphisme</strong> ©TNV design</p>
                         </div>
-                        
-                        <div class="credits">
-                            <p><strong>Conseil artistique :</strong> Thomas MOISSON</p>
-                            <p><strong>Enregistrement et mixage :</strong> Antonin VOLSON</p>
-                            <p><strong>Graphisme :</strong> TNV design</p>
-                        </div>
-                        
-                        <p class="quote">"Eben", c'est l'Autre en breton. "Eben" vient d'ailleurs, elle apporte un regard neuf sur notre culture et notre environnement. Son regard est notre miroir, face à lui on se rend compte de nos différences et nos ressemblances, de nos divergences et nos convergences, de notre singularité comme de notre banalité. L'Autre questionne notre identité, elle l'enrichit, elle nous offre un bout de Soi, qui devient une partie de Nous.</p>
-                        
-                        <p class="quote">"Eben" est aussi la forme féminine d'Autrui. Le "deuxième genre", celle dont l'histoire est bien souvent racontée d'un point de vue masculin, comme Keben et Dahud, ces femmes de pouvoir reléguées au rang de pécheresses ou de sorcières. Dans cet album nous avons voulu donner voix à ces "autres": les femmes, les migrants, les minorités, les peuples autochtones et même la Terre, ces voix du silence que l'on a trop peu écouté, dans une langue qui s'est elle aussi tue pendant bien longtemps.</p>
-                    </div>
-                    <div class="streaming-links">
-                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Écouter nos albums</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                     
+                  </div>
+    <div class="streaming-links" style="flex-direction: column; gap: 1rem;">
+        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Écouter notre album</a>
+    </div>
+</div>
+      </div>
+    </div> <!-- ← fermeture du bloc FR -->
 
         <!-- CONTENU ANGLAIS -->
         <div class="content" id="musique-en">
@@ -987,117 +1012,147 @@
                     <div class="album-cover">
                         <img src="https://i.imgur.com/1DTmjkR.png" alt="DINASKAÑ Album">
                     </div>
-                    <h3>DINASKAÑ (June 2025)</h3>
+                    <h3>DINASKAÑ (2025)</h3>
                     <div class="album-description">
-                        <p><strong>An artistic manifesto meaning "to unshackle" in Breton.</strong> Many tracks are a call for emancipation and resistance against conservative discourse: emancipation through dance, encounters, travel, and women's rights over their own bodies.</p>
+                        <h4>DINASKAÑ, A MANIFESTO FOR EMANCIPATION</h4>
                         
-                        <p>Tracks like <em>Dañs Ar Bleiz</em>, a dance symbolizing unity against fascism, and <em>Eostig Kuzh I</em>, a hymn to female emancipation, illustrate the album's central theme.</p>
+                        <p class="quote">After more than seven years bringing their dance songs across Brittany and Europe, EBEN takes a decisive turn with the release of their second album, Dinaskañ. This Breton word, meaning “to unshackle,” offers the key to understanding a project born from a shared desire to assert uncompromising artistic freedom and to root tradition firmly in the present. More than a collection of songs, Dinaskañ stands as a manifesto, one that anchors itself in the heritage of Breton singing while confronting today’s realities. Inspired by struggles and voices too often silenced, it brings to life contemporary stories, from the defiant factory worker to the rebellious dancer, from the condemned witch to the wandering dreamer, transforming memory into a living space of resistance.</p>
+                        <h4>UNBOUND TRADITIONS </h4>
+                        <p class="quote">Dinaskañ unfolds like a territory in tension between roots and reinvention. Grounded in kan-ha-diskan and gwerzioù, pillars of Breton tradition, EBEN expands its horizons far beyond, embracing full hybridization. Polyphonic singing, Galician and Indian percussion and orchestral arrangements intertwine with strings and voices. The result is a sound architecture that bridges organic folk, the cinematic atmospheres of The Cinematic Orchestra, the polyphonic fervor of La Mòssa and the raw intensity of Lankum. A plural work, where dance and trance draw strength from melancholy, and where the call for freedom resonates through voices both powerful and tender. With Dinaskañ, tradition becomes living matter, shaped by a writing style that combines immediate emotion with deep aesthetic intention. </p>
+                        
                         
                         <div class="credits">
-                            <p><strong>Artistic Direction:</strong> Antoine Lahay</p>
-                            <p><strong>Featuring:</strong> Ilyas Khan (tablas and beatbox)</p>
-                            <p><strong>Lyrics:</strong> Marine Lavigne and Sterenn Le Guillou</p>
+                            <p><strong>LINE UP :</strong>
+                            <p><strong>Marine Lavigne : vocals</strong>
+                            <p><strong>Sterenn Le Guillou : vocals</strong>
+                            <p><strong>Sterenn Diridollou : vocals</strong>
+                            <p><strong>Antoine Lahay : twelve-string and electric guitars</strong>
+                            <p><strong>Julien Stévenin : double bass</strong>
+                            <p><strong>Jonathan Dour : five string viola</strong>
+                            <p><strong>With :</strong> Ilyas Khan (tablas and beat box)</p>
+                                <p><strong>Artistic direction :</strong> Antoine Lahay</p>
+                            <p><strong>Lyrics</strong> Marine Lavigne et Sterenn Le Guillou</p>
+                            <p><strong>Recording</strong> Studio de Bretagne à Ploërmel (56) </p>
+                            <p><strong>Mix and Mastering</strong> Studio de Bretagne à Ploërmel (56) et Incisive Mastering à Nantes (44) ©2025 Arfolk</p>
+                            <p><strong>Photography</strong> ©Charlaine Croguennec</p>
                         </div>
-                        
-                        <p class="quote">The lyrics draw inspiration from oral tradition as well as other poetic universes, such as those of Studio Ghibli, Rosalía, and Gaël Faye.</p>
-                    </div>
-                    <div class="streaming-links">
-                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Listen to our albums</a>
-                    </div>
-                </div>
+                     
+                  </div>
+    <div class="streaming-links" style="flex-direction: column; gap: 1rem;">
+        <a href="https://fanlink.tv/dnskE" class="streaming-btn" target="_blank">Listen to our album</a>
+        <a href="https://arfolk.bzh/boutique/eben-dinaskan/" class="streaming-btn" target="_blank">Buy our album</a>
+    </div>
+</div>
                 
                 <div class="album-card fade-in">
                     <div class="album-cover">
-                        <img src="https://static.wixstatic.com/media/545133_b30a7db827674fc2a867b7ec2e388c4a~mv2_d_1417_2126_s_2.jpg/v1/fill/w_400,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBENvisuel.jpg" alt="First EBEN Album">
+                        <img src="https://static.wixstatic.com/media/545133_b30a7db827674fc2a867b7ec2e388c4a~mv2_d_1417_2126_s_2.jpg/v1/fill/w_400,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBENvisuel.jpg" alt="Premier Album EBEN">
                     </div>
-                    <h3>First Album (2019)</h3>
+                    <h3>EBEN (2019)</h3>
                     <div class="album-description">
-                        <p>EBEN's first album was officially released in November 2019 during the YAOUANK festival in Rennes.</p>
+                        <h4>“Eben” means the Other in Breton.</h4>
+                        
+                        <p class="quote"> "Eben" comes from elsewhere, it brings a fresh look at our culture and our environment. Her look is our mirror, in front of her we realize our differences and our similarities, our divergences and our convergences, our singularity as well as our banality. The Other questions our identity, it enriches it, it offers us a piece of Oneself, which becomes part of Us.</p>
+                        <p class="quote">“Eben” is also the feminine form of Other. The “second gender”, the one whose story is often told from a male point of view, like Keben and Dahud, two women of power relegated to the rank of sinners or bad witches. In this album we wanted to give a voice to these "others": women, migrants, minorities, indigenous peoples and even Earth, these voices of silence that we have heard too little, in a language that was also repressed for a long time.</p>
+                        
                         
                         <div class="credits">
-                            <p><strong>Enora JEGOU, Marine LAVIGNE, Sterenn LE GUILLOU:</strong> <em>Vocals</em></p>
-                            <p><strong>Jonathan DOUR:</strong> <em>Viola</em></p>
-                            <p><strong>Antoine LAHAY:</strong> <em>Electric guitar, 12-string acoustic guitar</em></p>
-                            <p><strong>Julien STEVENIN:</strong> <em>Double bass</em></p>
+                            <p><strong>LINE UP :</strong>
+                            <p><strong>Marine Lavigne : vocals</strong>
+                            <p><strong>Sterenn Le Guillou : vocals</strong>
+                            <p><strong>Enora Jegou : vocals</strong>
+                            <p><strong>Antoine Lahay : twelve§string and electric guitars</strong>
+                            <p><strong>Julien Stévenin : double bass</strong>
+                            <p><strong>Jonathan Dour : five string viola</strong>
+                                <p><strong>Artistic counselor, management</strong> Thomas Moisson</p>
+                            <p><strong>Lyrics</strong> Marine Lavigne</p>
+                            <p><strong>Recording and mix</strong> Antonin Volson </p>
+                            <p><strong>Graphic design</strong> ©TNV design</p>
                         </div>
-                        
-                        <div class="credits">
-                            <p><strong>Artistic Advisor:</strong> Thomas MOISSON</p>
-                            <p><strong>Recording and Mixing:</strong> Antonin VOLSON</p>
-                            <p><strong>Graphic Design:</strong> TNV design</p>
-                        </div>
-                        
-                        <p class="quote">"Eben" means "the Other" in Breton. "Eben" comes from elsewhere, bringing a fresh perspective on our culture and environment. Their gaze is our mirror, through which we realize our differences and similarities, our divergences and convergences, our uniqueness as well as our commonness. The Other questions our identity, enriches it, offers us a piece of Themselves, which becomes part of Us.</p>
-                        
-                        <p class="quote">"Eben" is also the feminine form of "Other." The "second gender," whose story is often told from a masculine perspective, like Keben and Dahud, powerful women relegated to the rank of sinners or witches. In this album, we wanted to give voice to these "others": women, migrants, minorities, indigenous peoples, and even the Earth—these voices of silence that have been too rarely heard, in a language that has also been silenced for too long.</p>
-                    </div>
-                    <div class="streaming-links">
-                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Listen to our albums</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                     
+                  </div>
+    <div class="streaming-links" style="flex-direction: column; gap: 1rem;">
+        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Listen to our first album</a>
+    </div>
+</div>
+      </div>
+    </div> <!-- ← fermeture du bloc EN -->
 
         <!-- CONTENU BRETON -->
-        <div class="content" id="musique-br">
-            <h2 class="section-title">Hon pladennoù</h2>
-            <div class="albums-grid">
+    <div class="content" id="musique-br">
+      <h2 class="section-title">PLADENNOÚ</h2>
+      <div class="albums-grid">
                 <div class="album-card fade-in">
                     <div class="album-cover">
-                        <img src="https://i.imgur.com/1DTmjkR.png" alt="Albom DINASKAÑ">
+                        <img src="https://i.imgur.com/1DTmjkR.png" alt="Album DINASKAÑ">
                     </div>
                     <h3>DINASKAÑ (2025)</h3>
                     <div class="album-description">
-                        <p><strong>Ur manifesto arzel a dalv "dientrammañ" e brezhoneg.</strong> Kalz a donennoù a zo ur galv d'an emansipiñ ha d'ar rezistañs a-enep ar prezegennoù mirour: an dieubiñ dre zañs, kejadennoù, beajoù, gwir ar merc'hed da ren war o c'horf.</p>
+                        <h4>UN DISKLÊRIADENN EVIT AN DINASKAÑ </h4>
                         
-                        <p>Tonennoù evel <em>Dañs Ar Bleiz</em>, un dañs oc'h aroueziñ an unaniezh a-enep ar fachouriezh, hag <em>Eostig Kuzh I</em>, ur meuleudi d'an dieubidigezh ar merc'hed, a ziskouez tem pennañ an albom.</p>
+                        <p class="quote">Goude seizh bloaz o kas o c’han da zañsal war gwenodennoù Breizh hag Europa e tap EBEN un hent nevez gant embannadenn o eil albom, Dinaskañ. An tilt a zo gêr-stur ar bladenn, ganet diwar ur c’hoant boutin da asuriñ ur frankiz arzel digabestr ha da blantañ an hengoun en amzer a-vremañ. Ouzhpenn bezañ un dastumad kanaouennoù eo Dinaskañ un disklêriadenn plantet e hengoun ar c’han breizhat, tal-ouzh-tal gant dalc’hoù an amzer a-vremañ. Awenet eo gant ar stourmoù hag ar mouezhioù bet tavet gwall alies, ha reiñ a ra buhez da istorioù an deiz a hiriv : labourerezed emsavet, dañserezed disuj, betek ar sorserez barnet fall hag ar foeterez huñvreoù, da dreiñ ar memor en un dachenn rezistañs buhezek.</p>
+                        <h4>HENGOUNIOÚ DICHADENN </h4>
+                        <p class="quote">Dinaskañ en em dro evel un tiriad lusket-dilusket tro-ha-tro gant gwrizioù hag ijinadennoù. Daoust ha gwriziennet er c’han-ha-diskan hag er gwerzioù e ledanañ EBEN he dremmwel en tu all dezho, oc’h embann splann o c’hoant hironiñ : kan liesmouzhiek, toserezh galisat hag indian ha kempennadurioù laz-seniñ az a touez-touez gant ar c’herdin hag ar mouezhioù. Diwar kement-mañ e teu maez un arkitektouriezh sonerezh a c’halv d’ar folk bevek, aergelc’hioù sinema The Cinematic Orchestra, entan liesmouezhiek La Móssa ha kreñvder gouez Lankum. Disrevel a ra Eben ur bladenn lies, e-lec’h ma ‘z a ar melkoni da vagañ an trañs hag an dañs, hag e-lec’h ma ‘ z eo enkorfet ar frankiz gant mouezhioù galloudus, dilikad ha splann. Dinaskañ a dro an hengoun en un danvez birvidik, kizellet gant un doare skrivañ a ra gant ar frommoù trumm koulz ha gant an donder kened. </p>
+                        
                         
                         <div class="credits">
-                            <p><strong>Renerezh arzel:</strong> Antoine Lahay</p>
-                            <p><strong>Gant:</strong> Ilyas Khan (tablas ha beat box)</p>
-                            <p><strong>Testennoù:</strong> Marine Lavigne ha Sterenn Le Guillou</p>
+                            <p><strong>LINE UP :</strong>
+                            <p><strong>Marine Lavigne : kan</strong>
+                            <p><strong>Sterenn Le Guillou : kan</strong>
+                            <p><strong>Sterenn Diridollou : kan</strong>
+                            <p><strong>Antoine Lahay : gitar daouzek kordenn, gitar tredan</strong>
+                            <p><strong>Julien Stévenin : gourrebed</strong>
+                            <p><strong>Jonathan Dour : alto 5 kordenn</strong>
+                            <p><strong>Avec :</strong> Ilyas Khan (tablas et beat box)</p>
+                                <p><strong>Renerezh arzel :</strong> Antoine Lahay</p>
+                            <p><strong>Skrivagnerezed</strong> Marine Lavigne et Sterenn Le Guillou</p>
+                            <p><strong>Enrollañ</strong> Studio de Bretagne à Ploërmel (56) </p>
+                            <p><strong>Sonveskañ ha Mastering</strong> Studio de Bretagne à Ploërmel (56) hag Incisive Mastering à Nantes (44) ©2025 Arfolk</p>
+                            <p><strong>Fotoioù</strong> ©Charlaine Croguennec</p>
                         </div>
-                        
-                        <p class="quote">An testennoù a denn o awen eus an hengoun dre gomz hag ivez eus bedoù barzhoniel all, evel re ar studioioù Ghibli, Rosalía ha Gaël Faye.</p>
-                    </div>
-                    <div class="streaming-links">
-                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Selaou hor albomioù</a>
-                    </div>
-                </div>
+                     
+                  </div>
+    <div class="streaming-links" style="flex-direction: column; gap: 1rem;">
+        <a href="https://fanlink.tv/dnskE" class="streaming-btn" target="_blank">Selaou hon albom</a>
+        <a href="https://arfolk.bzh/boutique/eben-dinaskan/" class="streaming-btn" target="_blank">Prenañ hon albom</a>
+    </div>
+</div>
                 
                 <div class="album-card fade-in">
                     <div class="album-cover">
-                        <img src="https://static.wixstatic.com/media/545133_b30a7db827674fc2a867b7ec2e388c4a~mv2_d_1417_2126_s_2.jpg/v1/fill/w_400,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBENvisuel.jpg" alt="Albom kentañ EBEN">
+                        <img src="https://static.wixstatic.com/media/545133_b30a7db827674fc2a867b7ec2e388c4a~mv2_d_1417_2126_s_2.jpg/v1/fill/w_400,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/EBENvisuel.jpg" alt="Premier Album EBEN">
                     </div>
-                    <h3>Albom Kentañ (2019)</h3>
+                    <h3>EBEN (2019)</h3>
                     <div class="album-description">
-                        <p>Albom kentañ EBEN a zo bet embannet ofisiel e miz Du 2019 e-pad gouel YAOUANK e Roazhon.</p>
+                        <h4>Eben a zeu eus a bell-vro</h4>
+                        
+                        <p class="quote">Degas a ra ur sell nevez war hor sevenadur hag hon endro. He sell a zo hor melezour, e-tal dezhañ en em rentomp kont eus hor perzhioù heverk ha boutin, eus hor disheñvelder hag hon heñvelder. Ganti e tizoloomp hor ribinoù deomp-ni hag an hentoù treuz a dapomp holl. Eben a sav goulennoù ouzh hon identelezh, pinvidikaat a ra anezhi, reiñ a ra un tamm Diouti hag a zeu da vezañ ur perzh Diouzhomp.</p>
+                        <p class="quote">Eben a zo stumm benel Egile. An "eil jener", an hini a glever hec'h istor kontet gant mouezhioù paotred, evel Keben ha Dahud, maouezed galloudus bet lakaet da berc'hourezed pe sorserezed. Er bladenn-se hon eus bet c'hoant reiñ da glevet ar Re All : ar maouezed, an divroidi, ar minorelezhioù, ar pobloù kentañ hag an Douar zoken, ar boudoù mut-mañ a glever ral a wech, en ur yezh a glever ken nebeut all.</p>
+                        
                         
                         <div class="credits">
-                            <p><strong>Enora JEGOU, Marine LAVIGNE, Sterenn LE GUILLOU:</strong> <em>Kan</em></p>
-                            <p><strong>Jonathan DOUR:</strong> <em>Alto</em></p>
-                            <p><strong>Antoine LAHAY:</strong> <em>Gitar tredan, gitar akoustik 12 kordenn</em></p>
-                            <p><strong>Julien STEVENIN:</strong> <em>Kontrebas</em></p>
+                            <p><strong>LINE UP :</strong>
+                            <p><strong>Marine Lavigne : kan</strong>
+                            <p><strong>Sterenn Le Guillou : kan</strong>
+                            <p><strong>Enora Jegou : kan</strong>
+                            <p><strong>Antoine Lahay : gitar daouzek kordenn, gitar tredan</strong>
+                            <p><strong>Julien Stévenin : gourrebed</strong>
+                            <p><strong>Jonathan Dour : alto 5 kordenn</strong>
+                                <p><strong>Kuzulioù arzel, management</strong> Thomas Moisson</p>
+                            <p><strong>Skrivagnerez</strong> Marine Lavigne</p>
+                            <p><strong>Enrollañ ha sonveskañ</strong> Antonin Volson </p>
+                            <p><strong>Graferezh</strong> ©TNV design</p>
                         </div>
-                        
-                        <div class="credits">
-                            <p><strong>Kuzulier arzel:</strong> Thomas MOISSON</p>
-                            <p><strong>Enrolladur ha meskadur:</strong> Antonin VOLSON</p>
-                            <p><strong>Grafism:</strong> TNV design</p>
-                        </div>
-                        
-                        <p class="quote">"Eben", an Arall eo e brezhoneg. "Eben" a zeu eus lec'h all, o tegas ur sell nevez war hor sevenadur hag hor endro. He sell eo hor melezour, dirazañ e komprenomp hor disheñvelderioù hag hor c'heñvelderioù, hor forc'hentezioù hag hor c'henglotadennoù, hor spesialded evel hor boutin. An Arall a c'houlenn hor identelezh, he finviañ a ra, kinnig a ra deomp un tamm eus He-unan, hag a zeu da vezañ ul lodenn ac'hanomp.</p>
-                        
-                        <p class="quote">"Eben" a zo ivez stumm benel "Arall". An "eil reizh", hini ma vez kontet he istor alies eus ur savboent gourel, evel Keben ha Dahud, merc'hed galloudus lakaet da vezañ pec'herezed pe sorserezed. En albom-mañ hon eus klasket reiñ mouezh d'an "arall"-se: ar merc'hed, an enbroidi, ar minorelezhoù, ar pobloù orin ha zoken an Douar, mouezhioù ar sioulder bet re nebeut selaouet, en ur yezh he deus ivez tevet e-pad pell amzer.</p>
-                    </div>
-                    <div class="streaming-links">
-                        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Selaou hor albomioù</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                     
+                  </div>
+    <div class="streaming-links" style="flex-direction: column; gap: 1rem;">
+        <a href="https://fanlink.tv/wGZ5" class="streaming-btn" target="_blank">Selaou hon albom gentañ</a>
     </div>
+</div>
+      </div>
+    </div> <!-- ← fermeture du bloc BR -->
 </section>
+
 
     <!-- SECTION VIDEOS -->
     <section class="section videos" id="videos">
@@ -1109,51 +1164,28 @@
                         <div class="video-embed">
                             <iframe src="https://www.youtube.com/embed/UgcIBYp0ghs" allowfullscreen></iframe>
                         </div>
-                        <div class="video-title">EBEN - Performance Live</div>
-                        <div class="video-description">Concert en direct du groupe EBEN</div>
+                        <div class="video-title">EBEN - DINASKAÑ</div>
+                        <div class="video-description">Live Session</div>
                     </div>
                     
                     <div class="video-card fade-in">
                         <div class="video-embed">
                             <iframe src="https://www.youtube.com/embed/4vB2AtAyg6c" allowfullscreen></iframe>
                         </div>
-                        <div class="video-title">EBEN - Dinaskañ</div>
-                        <div class="video-description">Live session</div>
+                        <div class="video-title">EBEN - Hent Ahez (live)</div>
+                        <div class="video-description">Yaouank 2024</div>
                     </div>
                     
                     <div class="video-card fade-in">
                         <div class="video-embed">
                             <iframe src="https://www.youtube.com/embed/aiqGmPLKfG4" allowfullscreen></iframe>
                         </div>
-                        <div class="video-title">EBEN - Concert</div>
-                        <div class="video-description">Extrait de concert live</div>
-                    </div>
-                    
-                    <div class="video-card fade-in">
-                        <div class="video-embed">
-                            <iframe src="https://www.youtube.com/embed/fkmnLTmnHpo" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">EBEN - Yaouank</div>
-                        <div class="video-description">Performance au festival Yaouank</div>
-                    </div>
-                    
-                    <div class="video-card fade-in">
-                        <div class="video-embed">
-                            <iframe src="https://www.youtube.com/embed/w2PSpQVfmdE" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">EBEN - Live Performance</div>
-                        <div class="video-description">Concert live du groupe</div>
-                    </div>
-                    
-                    <div class="video-card fade-in">
-                        <div class="video-embed">
-                            <iframe src="https://www.youtube.com/embed/JCGcpVO76EY" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">EBEN - Performance</div>
-                        <div class="video-description">Extrait musical en live</div>
+                        <div class="video-title">EBEN - Dañs jeu plinn (Live)</div>
+                        <div class="video-description">Yaouank 2019</div>
                     </div>
                 </div>
-            </div>
+          </div> <!-- fermeture FR -->
+                    
 
             <div class="content" id="videos-en">
                 <h2 class="section-title">Videos</h2>
@@ -1162,51 +1194,28 @@
                         <div class="video-embed">
                             <iframe src="https://www.youtube.com/embed/UgcIBYp0ghs" allowfullscreen></iframe>
                         </div>
-                        <div class="video-title">EBEN - Live Performance</div>
-                        <div class="video-description">Live concert by EBEN</div>
+                        <div class="video-title">EBEN - DINASKAÑ</div>
+                        <div class="video-description">Live session</div>
                     </div>
                     
                     <div class="video-card fade-in">
                         <div class="video-embed">
                             <iframe src="https://www.youtube.com/embed/4vB2AtAyg6c" allowfullscreen></iframe>
                         </div>
-                        <div class="video-title">EBEN - Live Session</div>
-                        <div class="video-description">Acoustic session by the band</div>
+                        <div class="video-title">EBEN - Hent Ahez (Live)</div>
+                        <div class="video-description">Yaouank 2024</div>
                     </div>
                     
                     <div class="video-card fade-in">
                         <div class="video-embed">
                             <iframe src="https://www.youtube.com/embed/aiqGmPLKfG4" allowfullscreen></iframe>
                         </div>
-                        <div class="video-title">EBEN - Concert</div>
-                        <div class="video-description">Live concert excerpt</div>
+                        <div class="video-title">EBEN - Dañs Jeu Plinn (Live)</div>
+                        <div class="video-description">Yaouank 2019</div>
                     </div>
-                    
-                    <div class="video-card fade-in">
-                        <div class="video-embed">
-                            <iframe src="https://www.youtube.com/embed/fkmnLTmnHpo" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">EBEN - Yaouank</div>
-                        <div class="video-description">Performance at Yaouank festival</div>
-                    </div>
-                    
-                    <div class="video-card fade-in">
-                        <div class="video-embed">
-                            <iframe src="https://www.youtube.com/embed/w2PSpQVfmdE" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">EBEN - Live Performance</div>
-                        <div class="video-description">Live concert by the band</div>
-                    </div>
-                    
-                    <div class="video-card fade-in">
-                        <div class="video-embed">
-                            <iframe src="https://www.youtube.com/embed/JCGcpVO76EY" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">EBEN - Performance</div>
-                        <div class="video-description">Live musical excerpt</div>
-                    </div>
-                </div>
-            </div>
+              </div>
+    </div> <!-- fermeture EN -->
+
 
             <div class="content" id="videos-br">
                 <h2 class="section-title">Videoioù</h2>
@@ -1215,48 +1224,24 @@
                         <div class="video-embed">
                             <iframe src="https://www.youtube.com/embed/UgcIBYp0ghs" allowfullscreen></iframe>
                         </div>
-                        <div class="video-title">EBEN - Kensevadenn bev</div>
-                        <div class="video-description">Kensevadenn bev gant ar strollad EBEN</div>
+                        <div class="video-title">EBEN - DINASKAÑ</div>
+                        <div class="video-description">Live Session</div>
                     </div>
                     
                     <div class="video-card fade-in">
                         <div class="video-embed">
                             <iframe src="https://www.youtube.com/embed/4vB2AtAyg6c" allowfullscreen></iframe>
                         </div>
-                        <div class="video-title">EBEN - Session bev</div>
-                        <div class="video-description">Session akoustik ar strollad</div>
+                        <div class="video-title">EBEN - Hent Ahez (Live)</div>
+                        <div class="video-description">Yaouank 2024</div>
                     </div>
                     
                     <div class="video-card fade-in">
                         <div class="video-embed">
                             <iframe src="https://www.youtube.com/embed/aiqGmPLKfG4" allowfullscreen></iframe>
                         </div>
-                        <div class="video-title">EBEN - Kensevadenn</div>
-                        <div class="video-description">Tamm eus ur gensevadenn bev</div>
-                    </div>
-                    
-                    <div class="video-card fade-in">
-                        <div class="video-embed">
-                            <iframe src="https://www.youtube.com/embed/fkmnLTmnHpo" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">EBEN - Yaouank</div>
-                        <div class="video-description">Kensevadenn e gouel Yaouank</div>
-                    </div>
-                    
-                    <div class="video-card fade-in">
-                        <div class="video-embed">
-                            <iframe src="https://www.youtube.com/embed/w2PSpQVfmdE" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">EBEN - Kensevadenn bev</div>
-                        <div class="video-description">Kensevadenn bev ar strollad</div>
-                    </div>
-                    
-                    <div class="video-card fade-in">
-                        <div class="video-embed">
-                            <iframe src="https://www.youtube.com/embed/JCGcpVO76EY" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">EBEN - Kensevadenn</div>
-                        <div class="video-description">Tamm sonerezh bev</div>
+                        <div class="video-title">EBEN - Dañs Jeu Plinn (Live)</div>
+                        <div class="video-description">Yaouank 2019</div>
                     </div>
                 </div>
             </div>
@@ -1280,34 +1265,34 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="date-col">11 janvier 2025</td>
-                            <td>Plougastel (29)</td>
-                            <td>Freizh-Noz</td>
+                            <td class="date-col">25 octobre 2025</td>
+                            <td>Tampere (Finland)</td>
+                            <td>WOMEX</td>
                         </tr>
                         <tr>
-                            <td class="date-col">25 janvier 2025</td>
-                            <td>Ambon (56)</td>
-                            <td>Fest-Noz</td>
+                            <td class="date-col">14 novembre 2025</td>
+                            <td>Ergue-Gaberic (29)</td>
+                            <td>Sortie de résidence</td>
                         </tr>
                         <tr>
-                            <td class="date-col">26 avril 2025</td>
-                            <td>Questembert</td>
-                            <td>La Lune Rousse</td>
+                            <td class="date-col">25 novembre 2025</td>
+                            <td>Paris</td>
+                            <td>Sortie d'album</td>
                         </tr>
                         <tr>
-                            <td class="date-col">10 mai 2025</td>
-                            <td>Aberystwyth (Pays de Galles)</td>
-                            <td>Cymru-Llydaw Festival</td>
+                            <td class="date-col">29 novembre 2025</td>
+                            <td>Paimpont (56)</td>
+                            <td>Son de Pais</td>
                         </tr>
                         <tr>
-                            <td class="date-col">26 juillet 2025</td>
-                            <td>Quimper (29)</td>
-                            <td>Festival de Cornouaille</td>
+                            <td class="date-col">24 janvier 2026</td>
+                            <td>Plouguerneau (29)</td>
+                            <td>Fest-noz</td>
                         </tr>
                         <tr>
-                            <td class="date-col">3 août 2025</td>
-                            <td>Lorient (56)</td>
-                            <td>Festival Interceltique</td>
+                            <td class="date-col">31 janvier 2026</td>
+                            <td>Quimperle (29)</td>
+                            <td>Fest-noz</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1321,42 +1306,34 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Venue</th>
-                            <th>Event</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="date-col">January 11, 2025</td>
-                            <td>Plougastel (29)</td>
-                            <td>Freizh-Noz</td>
+                            <td class="date-col">October 25, 2025</td>
+                            <td>Tampere (Finland)</td>
+                            <td>WOMEX</td>
                         </tr>
                         <tr>
-                            <td class="date-col">January 25, 2025</td>
-                            <td>Ambon (56)</td>
-                            <td>Fest-Noz</td>
+                            <td class="date-col">November 14, 2025</td>
+                            <td>Ergue-Gaberic (29)</td>
+                            <td>Sortie de résidence</td>
                         </tr>
                         <tr>
-                            <td class="date-col">April 26, 2025</td>
-                            <td>Questembert</td>
-                            <td>La Lune Rousse</td>
+                            <td class="date-col">November 25, 2025</td>
+                            <td>Paris</td>
+                            <td>Sortie d'album</td>
                         </tr>
                         <tr>
-                            <td class="date-col">May 10, 2025</td>
-                            <td>Aberystwyth (Wales)</td>
-                            <td>Cymru-Llydaw Festival</td>
+                            <td class="date-col">November 29, 2025</td>
+                            <td>Paimpont (56)</td>
+                            <td>Son de Pais</td>
                         </tr>
                         <tr>
-                            <td class="date-col">July 26, 2025</td>
-                            <td>Quimper (29)</td>
-                            <td>Festival de Cornouaille</td>
+                            <td class="date-col">January 24, 2026</td>
+                            <td>Plouguerneau (29)</td>
+                            <td>Fest-noz</td>
                         </tr>
                         <tr>
-                            <td class="date-col">August 3, 2025</td>
-                            <td>Lorient (56)</td>
-                            <td>Interceltique Festival</td>
-                        </tr>
+                            <td class="date-col">January 31, 2026</td>
+                            <td>Quimperle (29)</td>
+                            <td>Fest-noz</td>
                     </tbody>
                 </table>
             </div>
@@ -1376,35 +1353,34 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="date-col">11 a viz Genver</td>
-                            <td>Plougastel (29)</td>
-                            <td>Freizh-Noz</td>
+                            <td class="date-col">25 a viz Here 2025</td>
+                            <td>Tampere (Finland)</td>
+                            <td>WOMEX</td>
                         </tr>
                         <tr>
-                            <td class="date-col">25 a viz Genver</td>
-                            <td>Ambon (56)</td>
-                            <td>Fest-Noz</td>
+                            <td class="date-col">14 a viz Du 2025</td>
+                            <td>Ergue-Vras (29)</td>
+                            <td>Sortie de résidence</td>
                         </tr>
                         <tr>
-                            <td class="date-col">26 a viz Ebrel</td>
-                            <td>Kistreberzh</td>
-                            <td>La Lune Rousse</td>
+                            <td class="date-col">25 a viz Du 2025</td>
+                            <td>Pariz</td>
+                            <td>Sortie d'album</td>
                         </tr>
                         <tr>
-                            <td class="date-col">10 a viz Mae</td>
-                            <td>Aberystwyth (Kembre)</td>
-                            <td>Gouel Cymru-Llydaw</td>
+                            <td class="date-col">29 a viz Du 2025</td>
+                            <td>Paimpont (56)</td>
+                            <td>Son de Pais</td>
                         </tr>
                         <tr>
-                            <td class="date-col">26 a viz Gouere</td>
-                            <td>Kemper (29)</td>
-                            <td>Gouel Kerne</td>
+                            <td class="date-col">24 a viz Genver 2026</td>
+                            <td>Plougerne (29)</td>
+                            <td>Fest-noz</td>
                         </tr>
                         <tr>
-                            <td class="date-col">3 a viz Eost</td>
-                            <td>An Oriant (56)</td>
-                            <td>Gouel Etrekeltiek</td>
-                        </tr>
+                            <td class="date-col">31 a viz Genver 2026</td>
+                            <td>Kemperle (29)</td>
+                            <td>Fest-noz</td>
                     </tbody>
                 </table>
             </div>
@@ -1422,14 +1398,14 @@
                         <h3>Contacts Professionnels</h3>
                         
                         <div class="contact-item">
-                            <h4>Concerts / International</h4>
+                            <h4>Production / Booking</h4>
                             <p><strong>Naïade Productions</strong></p>
                             <p>📞 02 99 85 44 04</p>
                             <p>✉️ contact@naiadeproductions.com</p>
                         </div>
 
                         <div class="contact-item">
-                            <h4>Fest-noz / Bals</h4>
+                            <h4>Groupe</h4>
                             <p><strong>Sterenn LE GUILLOU</strong></p>
                             <p>📞 06 58 65 74 63</p>
                             <p>✉️ ebenofisiel@gmail.com</p>
@@ -1441,9 +1417,8 @@
                         
                         <div class="contact-item">
                             <h4>📋 Documents à télécharger</h4>
-                            <p>• Fiche technique disponible sur demande</p>
-                            <p>• Kit presse (photos HD, bio)</p>
-                            <p>• Rider technique et hospitalité</p>
+                            <p>• <a href="https://drive.google.com/drive/folders/1qXzX-kNQpm0H2p6ZM6wbVooNu6_HNNDl?usp=sharing" target="_blank">Fiche technique - EBEN</a></p>
+                            <p>• <a href="https://drive.google.com/drive/folders/1_TLkj98NFacMDJFvIN1j6tkAluiS6-sq?usp=sharing" target="_blank">Kit Média - EBEN</a></p>
                         </div>
                     </div>
                 </div>
@@ -1456,16 +1431,17 @@
                         <h3>Professional Contacts</h3>
                         
                         <div class="contact-item">
-                            <h4>Concerts / International</h4>
+                            <h4>Production / Booking</h4>
                             <p><strong>Naïade Productions</strong></p>
                             <p>📞 +33 2 99 85 44 04</p>
                             <p>✉️ contact@naiadeproductions.com</p>
                         </div>
 
                         <div class="contact-item">
-                            <h4>Fest-noz / Folk Dances</h4>
-                            <p><strong>Jonathan DOUR</strong></p>
-                            <p>📞 +33 6 86 16 55 36</p>
+                            <h4>Group</h4>
+                            <p><strong>Sterenn Le Guillou</strong></p>
+                            <p>📞 +33 6 58 65 74 63</p>
+                            <p>✉️ ebenofisiel@gmail.com</p>
                         </div>
                     </div>
 
@@ -1474,9 +1450,8 @@
                         
                         <div class="contact-item">
                             <h4>📋 Documents to download</h4>
-                            <p>• Technical sheet available on request</p>
-                            <p>• Press kit (HD photos, bio)</p>
-                            <p>• Technical rider and hospitality</p>
+                            <p>• <a href="https://drive.google.com/drive/folders/1qXzX-kNQpm0H2p6ZM6wbVooNu6_HNNDl?usp=sharing" target="_blank">Technical Specifications - EBEN</a></p>
+                            <p>• <a href="https://drive.google.com/drive/folders/1_TLkj98NFacMDJFvIN1j6tkAluiS6-sq?usp=sharing" target="_blank">Media Kit - EBEN</a></p>
                         </div>
                     </div>
                 </div>
@@ -1486,18 +1461,20 @@
                 <h2 class="section-title">Darempredoù</h2>
                 <div class="booking-grid">
                     <div class="booking-info fade-in">
-                        <h3>Darempredoù Proffesionel</h3>
+                        <h3>Darempredoù</h3>
                         
                         <div class="contact-item">
-                            <h4>Kensevedadennoù / Etrevroadel</h4>
+                            <h4>Produiñ / Programiñ</h4>
                             <p><strong>Naïade Productions</strong></p>
                             <p>📞 02 99 85 44 04</p>
+                            <p>✉️ contact@naiadeproductions.com</p>                            
                         </div>
 
                         <div class="contact-item">
-                            <h4>Festoù-noz / Balioù</h4>
-                            <p><strong>Jonathan DOUR</strong></p>
-                            <p>📞 06 86 16 55 36</p>
+                            <h4>Strollad</h4>
+                            <p><strong>Sterenn Le Guillou</strong></p>
+                            <p>📞 +33 6 58 65 74 63</p>
+                            <p>✉️ ebenofisiel@gmail.com</p>
                         </div>
                     </div>
 
@@ -1506,9 +1483,8 @@
                         
                         <div class="contact-item">
                             <h4>📋 Teulioù da bellgargañ</h4>
-                            <p>• Fich teknikel da c'houlenn</p>
-                            <p>• Kit-presse (luc'hskeudennoù HD, buhez)</p>
-                            <p>• Rider teknikel ha degemer</p>
+                            <p>•  <a href="https://drive.google.com/drive/folders/1qXzX-kNQpm0H2p6ZM6wbVooNu6_HNNDl?usp=sharing" target="_blank">Fichenn teknikel - EBEN</a></p>
+                            <p>• <a href="https://drive.google.com/drive/folders/1_TLkj98NFacMDJFvIN1j6tkAluiS6-sq?usp=sharing" target="_blank">Kit Media - EBEN</a></p>
                         </div>
                     </div>
                 </div>
